@@ -411,6 +411,59 @@ a {
   align-items: start;
 }
 
+.location-callout,
+.location-cta { margin-top: 3.2rem; padding: 1.5rem 1.7rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; border: 1px solid #bde4df; border-radius: 20px; background: linear-gradient(120deg, rgba(239, 255, 251, 0.95), rgba(255, 248, 225, 0.92)); }
+.location-callout h2,
+.location-cta h2 { margin: 0.4rem 0; font-size: clamp(1.35rem, 3vw, 2rem); }
+.location-callout p:last-child,
+.location-cta p:last-child { margin: 0; color: var(--muted); }
+.location-hero,
+.district-hero { padding: 4.6rem 0 3rem; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.6rem; align-items: center; }
+.location-hero h1,
+.district-hero h1 { margin: 0.8rem 0 0; font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.13; }
+.location-hero h1 span,
+.district-hero h1 span { background: linear-gradient(to top, #ffe08a 45%, transparent 45%); }
+.breadcrumb { display: inline-block; color: var(--muted); font-size: 0.88rem; margin-bottom: 1.2rem; }
+.location-hero-note,
+.district-fact { padding: 1.5rem; border-radius: 22px; background: #183b50; color: white; box-shadow: var(--shadow); }
+.location-hero-note { display: grid; gap: 0.45rem; }
+.location-hero-note span,
+.district-fact p { color: #c8e1df; margin: 0; }
+.district-fact { min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; }
+.fact-label { color: #8de2d4; font-size: 0.88rem; }
+.district-fact strong { font-family: "Montserrat", sans-serif; font-size: 1.65rem; line-height: 1.3; }
+.location-tools,
+.location-benefits,
+.district-programs,
+.district-flow { padding: 2.2rem 0 1rem; }
+.search-box { margin: 1.4rem 0; display: flex; align-items: center; gap: 0.6rem; padding: 0.2rem 1rem; border: 1px solid var(--line); border-radius: 14px; background: white; color: var(--brand-dark); }
+.search-box span { font-size: 1.5rem; }
+.search-box input { width: 100%; border: 0; outline: 0; padding: 0.75rem 0; font: inherit; }
+.region-list { display: grid; gap: 0.8rem; }
+.region-block { padding: 1.1rem; border: 1px solid var(--line); border-radius: 17px; background: rgba(255,255,255,0.9); }
+.region-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.region-heading h3 { margin: 0; }
+.region-heading span { color: var(--muted); font-size: 0.85rem; }
+.district-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+.district-links a { padding: 0.5rem 0.65rem; border-radius: 9px; background: #f2faf9; color: #176f6d; font-size: 0.9rem; transition: transform 0.2s ease, background 0.2s ease; }
+.district-links a:hover { transform: translateY(-2px); background: #d9f4ee; }
+.district-links a span { margin-left: 0.3rem; font-size: 0.75rem; }
+.empty-state { padding: 1.2rem; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 14px; }
+.benefit-grid,
+.flow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.2rem; }
+.benefit-grid article,
+.flow-grid article { padding: 1.2rem; border-top: 3px solid var(--accent); background: rgba(255,255,255,0.76); }
+.benefit-grid span,
+.flow-grid b { color: var(--brand-dark); font-family: "Montserrat", sans-serif; font-weight: 800; }
+.benefit-grid h3,
+.flow-grid h3 { margin: 0.55rem 0 0.25rem; }
+.benefit-grid p,
+.flow-grid p { color: var(--muted); margin: 0; }
+.district-programs .program-card { display: flex; flex-direction: column; }
+.district-programs .program-card h3 { order: -1; }
+.district-programs .program-card span { color: var(--muted); }
+.district-programs .program-card a { margin-top: 1rem; color: var(--brand-dark); font-weight: 700; }
+
 .contact-form {
   background: white;
   border: 1px solid var(--line);
@@ -463,13 +516,17 @@ a {
 
 @media (max-width: 980px) {
   .hero,
-  .contact {
+  .contact,
+  .location-hero,
+  .district-hero {
     grid-template-columns: 1fr;
   }
 
   .program-grid,
   .review-grid,
-  .metrics {
+  .metrics,
+  .benefit-grid,
+  .flow-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -484,6 +541,15 @@ a {
   .metrics {
     grid-template-columns: 1fr;
   }
+
+  .benefit-grid,
+  .flow-grid { grid-template-columns: 1fr; }
+
+  .location-callout,
+  .location-cta { align-items: flex-start; flex-direction: column; }
+
+  .location-callout .btn,
+  .location-cta .btn { width: 100%; }
 
   .hero {
     padding-top: 3.4rem;
