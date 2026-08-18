@@ -444,6 +444,8 @@ a {
 .location-tools,
 .location-benefits,
 .district-programs,
+.district-topics,
+.district-faq,
 .district-flow { padding: 2.2rem 0 1rem; }
 .search-box { margin: 1.4rem 0; display: flex; align-items: center; gap: 0.6rem; padding: 0.2rem 1rem; border: 1px solid var(--line); border-radius: 14px; background: white; color: var(--brand-dark); }
 .search-box span { font-size: 1.5rem; }
@@ -472,6 +474,14 @@ a {
 .district-programs .program-card h3 { order: -1; }
 .district-programs .program-card span { color: var(--muted); }
 .district-programs .program-card a { margin-top: 1rem; color: var(--brand-dark); font-weight: 700; }
+.topic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.2rem; }
+.topic-grid article { padding: 1.25rem; background: rgba(255,255,255,0.86); border: 1px solid var(--line); border-radius: 16px; }
+.topic-grid h3 { margin: 0; color: #20304f; }
+.topic-grid p { margin: 0.65rem 0 0; color: var(--muted); }
+.faq-list { display: grid; gap: 0.7rem; margin-top: 1.2rem; }
+.faq-list details { padding: 1rem 1.15rem; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,0.9); }
+.faq-list summary { cursor: pointer; color: #20304f; font-weight: 700; }
+.faq-list p { margin: 0.7rem 0 0; color: var(--muted); }
 
 .contact-form {
   background: white;
@@ -535,7 +545,8 @@ a {
   .review-grid,
   .metrics,
   .benefit-grid,
-  .flow-grid {
+  .flow-grid,
+  .topic-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -552,7 +563,8 @@ a {
   }
 
   .benefit-grid,
-  .flow-grid { grid-template-columns: 1fr; }
+  .flow-grid,
+  .topic-grid { grid-template-columns: 1fr; }
 
   .location-callout,
   .location-cta { align-items: flex-start; flex-direction: column; }
