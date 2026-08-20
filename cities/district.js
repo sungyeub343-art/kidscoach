@@ -21,6 +21,13 @@ const faqs = [
   [`${districtName} 초등 숙제 관리와 공부습관 코칭도 가능한가요?`, "가능합니다. 숙제 진행 상황, 집중 시간, 오답 정리 방식을 확인해 가정에서 이어갈 수 있는 주간 학습 루틴을 함께 만듭니다."]
 ];
 if (content) {
+  const categoryLabelObserver = new MutationObserver(() => {
+    if (content.innerHTML.includes("지역별 안내")) {
+      content.innerHTML = content.innerHTML.replaceAll("지역별 안내", "유아·초등 학습지 과외");
+      categoryLabelObserver.disconnect();
+    }
+  });
+  categoryLabelObserver.observe(content, { childList: true });
   document.title = `${districtName} 유아·초등 학습지 과외 | 키즈코치`;
   const description = `${districtName} 유아 한글·수학, 7세 예비초등, 초등 국어·수학·영어와 공부습관을 위한 1:1 학습 상담을 안내합니다.`;
   document.querySelector('meta[name="description"]')?.setAttribute("content", description);
