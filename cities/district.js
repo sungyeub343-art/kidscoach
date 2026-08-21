@@ -39,6 +39,6 @@ if (!neighborhoodName && seoulNeighborhoods[districtName] && content) {
   const neighborhoodSection = document.createElement("section");
   neighborhoodSection.className = "district-neighborhoods container reveal visible";
   neighborhoodSection.innerHTML = `<div class="section-head"><p class="eyebrow">동네별 수업 안내</p><h2>${districtName} 동·읍·면 지역 선택</h2><p class="hero-text">거주 또는 수업 희망 동네를 선택하면 해당 지역 상담 페이지로 이동합니다.</p></div><div class="neighborhood-links">${seoulNeighborhoods[districtName].map((neighborhood) => `<a href="${neighborhoodUrl(regionName, districtName, neighborhood)}">${neighborhood}<span aria-hidden="true">↗</span></a>`).join("")}</div>`;
-  content.querySelector(".district-programs")?.before(neighborhoodSection);
+  content.append(neighborhoodSection);
 }
 if (neighborhoodName && content) content.innerHTML = content.innerHTML.replaceAll(districtName, pageAreaName);
