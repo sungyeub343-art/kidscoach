@@ -39,7 +39,9 @@ const neighborhoodList = regionName === "경기도"
   ? gyeonggiNeighborhoods[districtName]
   : regionName === "인천광역시"
     ? incheonNeighborhoods[districtName]
-    : seoulNeighborhoods[districtName];
+    : regionName === "부산광역시"
+      ? busanNeighborhoods[districtName]
+      : seoulNeighborhoods[districtName];
 if (!neighborhoodName && neighborhoodList && content) {
   const neighborhoodSection = document.createElement("section");
   neighborhoodSection.className = "district-neighborhoods container reveal visible";
