@@ -1,6 +1,8 @@
 const params = new URLSearchParams(window.location.search);
 const regionName = params.get("region") || "서울특별시";
 const districtName = params.get("district") || "강남구";
+const neighborhoodName = params.get("neighborhood");
+const pageAreaName = neighborhoodName ? `${districtName} ${neighborhoodName}` : districtName;
 const content = document.querySelector("#district-content");
 const programCards = [
   ["스크래치 창작 코딩", "유아·초1~초3", "블록을 조립해 게임과 애니메이션을 만들며 순서, 조건, 반복의 기초를 익힙니다."],
@@ -21,8 +23,8 @@ const faqs = [
   [`${districtName} 초등 고학년은 어떤 언어를 배우나요?`, "아이의 경험과 목표에 따라 엔트리에서 파이썬으로 넘어가거나 HTML·CSS 웹 제작을 진행합니다. 현재 수준을 확인한 뒤 무리 없는 단계를 제안합니다."]
 ];
 if (content) {
-  document.title = `${districtName} 코딩 과외 | 키즈코치`;
-  document.querySelector('meta[name="description"]')?.setAttribute("content", `${districtName} 유아·초등 코딩 과외, 스크래치·엔트리·파이썬 프로젝트 수업 상담을 안내합니다.`);
+  document.title = `${pageAreaName} 코딩 과외 | 키즈코치`;
+  document.querySelector('meta[name="description"]')?.setAttribute("content", `${pageAreaName} 유아·초등 코딩 과외, 스크래치·엔트리·파이썬 프로젝트 수업 상담을 안내합니다.`);
   content.innerHTML = `
     <section class="district-hero container reveal visible"><div><a class="breadcrumb" href="index.html">코딩 과외</a><p class="eyebrow">${regionName} ${districtName} 맞춤 코딩</p><h1>${districtName}에서<br /><span>아이의 첫 코딩 프로젝트</span>를 시작하세요</h1><p class="hero-text">키즈코치는 ${districtName} 가정의 일정과 아이의 관심사를 바탕으로 유아·초등 코딩 과외를 맞춤 연결합니다.</p><div class="hero-cta"><a class="btn" href="../#contact">${districtName} 코딩 상담</a><a class="btn btn-ghost" href="index.html">다른 지역 찾기</a></div></div><aside class="district-fact"><span class="fact-label">${regionName} · ${districtName}</span><strong>만들고<br />설명하는 코딩</strong><p>방문과 화상 수업 모두 아이의 속도에 맞춰 진행합니다.</p></aside></section>
     <section class="district-programs container reveal visible"><div class="section-head"><p class="eyebrow">지역 맞춤 코딩 프로그램</p><h2>${districtName} 아이를 위한 프로젝트 수업</h2></div><div class="program-grid">${programCards.map(([title, age, description]) => `<article class="program-card"><p>${age}</p><h3>${title}</h3><span>${description}</span><a href="../#contact">상담하기 <span aria-hidden="true">→</span></a></article>`).join("")}</div></section>
@@ -31,3 +33,21 @@ if (content) {
     <section class="district-flow container reveal visible"><div class="section-head"><p class="eyebrow">아이에게 맞는 코딩 시작</p><h2>상담부터 첫 프로젝트 완성까지</h2></div><div class="flow-grid"><article><b>01</b><h3>현재 경험 확인</h3><p>학년, 기기 환경, 좋아하는 주제와 코딩 경험을 가볍게 확인합니다.</p></article><article><b>02</b><h3>프로젝트 설계</h3><p>아이디어를 정하고 필요한 코딩 개념을 작은 단계로 나눕니다.</p></article><article><b>03</b><h3>완성·피드백</h3><p>결과물을 완성한 뒤 코드를 설명하고 다음 도전 과제를 정합니다.</p></article></div></section>
     <section class="district-cta container reveal visible"><div><p class="eyebrow">${districtName} 코딩 맞춤 상담</p><h2>아이의 호기심을 첫 프로젝트로 연결해보세요</h2></div><a class="btn" href="../#contact">코딩 과외 상담 신청 <span aria-hidden="true">→</span></a></section>`;
 }
+const neighborhoodMaps = {
+  "서울특별시": seoulNeighborhoods,
+  "경기도": gyeonggiNeighborhoods,
+  "인천광역시": incheonNeighborhoods,
+  "부산광역시": busanNeighborhoods,
+  "대구광역시": daeguNeighborhoods,
+  "광주광역시": gwangjuNeighborhoods,
+  "울산광역시": ulsanNeighborhoods,
+  ...nationalNeighborhoods
+};
+const neighborhoodList = neighborhoodMaps[regionName]?.[districtName];
+if (!neighborhoodName && neighborhoodList && content) {
+  const neighborhoodSection = document.createElement("section");
+  neighborhoodSection.className = "district-neighborhoods container reveal visible";
+  neighborhoodSection.innerHTML = `<div class="section-head"><p class="eyebrow">동네별 코딩 과외 안내</p><h2>${districtName} 동·읍·면 지역 선택</h2><p class="hero-text">거주 또는 수업 희망 동네를 선택하면 해당 지역 코딩 과외 상담 페이지로 이동합니다.</p></div><div class="neighborhood-links">${neighborhoodList.map((neighborhood) => `<a href="${neighborhoodUrl(regionName, districtName, neighborhood)}">${neighborhood}<span aria-hidden="true">↗</span></a>`).join("")}</div>`;
+  content.append(neighborhoodSection);
+}
+if (neighborhoodName && content) content.innerHTML = content.innerHTML.replaceAll(districtName, pageAreaName);
