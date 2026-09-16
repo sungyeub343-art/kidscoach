@@ -441,6 +441,8 @@ a {
 .district-fact { min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; }
 .fact-label { color: #8de2d4; font-size: 0.88rem; }
 .district-fact strong { font-family: "Montserrat", sans-serif; font-size: 1.65rem; line-height: 1.3; }
+.district-promo { padding: 1rem 0 2rem; }
+.district-promo img { display: block; width: min(100%, 540px); height: auto; margin: 0 auto; }
 .location-tools,
 .location-benefits,
 .district-programs,
