@@ -32,6 +32,7 @@ if (content) {
     <section class="district-faq container reveal visible"><div class="section-head"><p class="eyebrow">자주 묻는 질문</p><h2>${districtName} 코딩 과외 FAQ</h2></div><div class="faq-list">${faqs.map(([question, answer]) => `<details><summary>${question}</summary><p>${answer}</p></details>`).join("")}</div></section>
     <section class="district-flow container reveal visible"><div class="section-head"><p class="eyebrow">아이에게 맞는 코딩 시작</p><h2>상담부터 첫 프로젝트 완성까지</h2></div><div class="flow-grid"><article><b>01</b><h3>현재 경험 확인</h3><p>학년, 기기 환경, 좋아하는 주제와 코딩 경험을 가볍게 확인합니다.</p></article><article><b>02</b><h3>프로젝트 설계</h3><p>아이디어를 정하고 필요한 코딩 개념을 작은 단계로 나눕니다.</p></article><article><b>03</b><h3>완성·피드백</h3><p>결과물을 완성한 뒤 코드를 설명하고 다음 도전 과제를 정합니다.</p></article></div></section>
     <section class="district-cta container reveal visible"><div><p class="eyebrow">${districtName} 코딩 맞춤 상담</p><h2>아이의 호기심을 첫 프로젝트로 연결해보세요</h2></div><a class="btn" href="../#contact">코딩 과외 상담 신청 <span aria-hidden="true">→</span></a></section>`;
+  content.querySelector(".district-hero")?.insertAdjacentHTML("afterend", `<section class="district-promo container"><img src="../[복사본] 하우코딩 .jpg" alt="유아·초등 코딩 교육과 자바스크립트·파이썬 수업 안내" width="800" height="8800" loading="lazy" decoding="async" /></section>`);
 }
 const neighborhoodMaps = {
   "서울특별시": seoulNeighborhoods,
