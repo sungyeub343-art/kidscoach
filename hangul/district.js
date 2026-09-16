@@ -24,7 +24,7 @@ const faqs = [
 ];
 
 if (content) {
-  document.title = `지역별 5세·6세·7세 한글 방문 학습지 문의 | ${pageAreaName} | 키즈코치`;
+  document.title = `지역별 5세·6세·7세 한글 방문 학습지 문의 | ${pageAreaName} | 키즈상상코칭`;
   document.querySelector('meta[name="description"]')?.setAttribute("content", `${pageAreaName} 5세·6세·7세 한글 방문 학습지 수업과 읽기·쓰기 맞춤 상담을 안내합니다.`);
   content.innerHTML = `
     <section class="district-hero container reveal visible"><div><a class="breadcrumb" href="index.html">한글 방문 학습</a><p class="eyebrow">${regionName} ${pageAreaName} 맞춤 안내</p><h1>지역별 5세·6세·7세<br /><span>한글 방문 학습지 문의</span></h1><p class="hero-text">아이의 한글 경험과 집중 시간을 살펴 ${pageAreaName} 가정에 맞는 1:1 방문 학습을 안내합니다.</p><div class="hero-cta"><a class="btn" href="../#contact">${pageAreaName} 방문 수업 문의</a><a class="btn btn-ghost" href="index.html">다른 지역 찾기</a></div></div><aside class="district-fact"><span class="fact-label">${regionName} · ${pageAreaName}</span><strong>5세부터 7세까지<br />맞춤 한글 학습</strong><p>읽기·쓰기·어휘를 아이의 속도에 맞춰 진행합니다.</p></aside></section>
