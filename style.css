@@ -432,6 +432,7 @@ a {
 .district-hero h1 { margin: 0.8rem 0 0; font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.13; }
 .location-hero h1 span,
 .district-hero h1 span { background: linear-gradient(to top, #ffe08a 45%, transparent 45%); }
+.english-test-title-break { display: none; }
 .breadcrumb { display: inline-block; color: var(--muted); font-size: 0.88rem; margin-bottom: 1.2rem; }
 .location-hero-note,
 .district-fact { padding: 1.5rem; border-radius: 22px; background: #183b50; color: white; box-shadow: var(--shadow); }
@@ -563,6 +564,15 @@ a {
 }
 
 @media (max-width: 640px) {
+  .english-test-hero h1 {
+    font-size: 1.75rem;
+    word-break: keep-all;
+  }
+
+  .english-test-title-break {
+    display: block;
+  }
+
   .program-grid,
   .review-grid,
   .metrics {
