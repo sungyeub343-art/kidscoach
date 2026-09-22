@@ -124,9 +124,68 @@ a {
 
 .nav-links {
   display: inline-flex;
+  align-items: center;
   gap: 1.3rem;
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.category-menu {
+  position: relative;
+}
+
+.category-menu summary {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  list-style: none;
+  color: var(--muted);
+}
+
+.category-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.category-menu summary::after {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-0.12rem) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.category-menu[open] summary::after {
+  transform: translateY(0.12rem) rotate(225deg);
+}
+
+.category-menu-links {
+  position: absolute;
+  top: calc(100% + 0.9rem);
+  right: 0;
+  width: max-content;
+  min-width: 210px;
+  padding: 0.55rem;
+  display: grid;
+  gap: 0.15rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 16px 36px rgba(37, 48, 68, 0.14);
+}
+
+.category-menu-links a {
+  padding: 0.65rem 0.75rem;
+  border-radius: 6px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.category-menu-links a:hover {
+  background: var(--soft-blue);
+  color: var(--brand-dark);
 }
 
 .btn {
@@ -558,7 +617,7 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .nav-links {
+  .nav-links > a {
     display: none;
   }
 }
