@@ -24,7 +24,7 @@ const faqs = [
 ];
 
 if (content) {
-  document.title = `${pageAreaName} 영어 레벨테스트 대비 과외 문의 | 키즈상상코칭`;
+  document.title = `${pageAreaName} 영어 레벨테스트 대비 과외 문의 | 상상코칭`;
   document.querySelector('meta[name="description"]')?.setAttribute("content", `${pageAreaName} 유아·초등 영어 레벨테스트 대비 과외, 리딩·문법·리스닝·인터뷰 맞춤 수업을 안내합니다.`);
   content.innerHTML = `
     <section class="district-hero english-test-hero container reveal visible"><div><a class="breadcrumb" href="index.html">영어 레벨테스트</a><p class="eyebrow">${regionName} ${pageAreaName} 맞춤 영어</p><h1>${pageAreaName}<br /><span>영어 레벨테스트 대비<br class="english-test-title-break" />과외 문의</span></h1><p class="hero-text">아이의 현재 영어 수준과 시험 유형을 살펴 ${pageAreaName} 가정에 맞는 1:1 레벨테스트 대비 수업을 안내합니다.</p><div class="hero-cta"><a class="btn" href="../#contact">${pageAreaName} 영어 과외 문의</a><a class="btn btn-ghost" href="index.html">다른 지역 찾기</a></div></div><aside class="district-fact"><span class="fact-label">${regionName} · ${pageAreaName}</span><strong>진단부터 실전까지<br />맞춤 영어 대비</strong><p>필요한 시험 영역을 아이의 수준과 일정에 맞춰 준비합니다.</p></aside></section>
