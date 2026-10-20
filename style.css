@@ -550,32 +550,6 @@ a {
 .faq-list summary { cursor: pointer; color: #20304f; font-weight: 700; }
 .faq-list p { margin: 0.7rem 0 0; color: var(--muted); }
 
-.contact-form {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 1rem;
-  display: grid;
-  gap: 0.8rem;
-}
-
-.contact-form label {
-  font-size: 0.9rem;
-  color: #2d3650;
-  display: grid;
-  gap: 0.4rem;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  border: 1px solid #ced8ea;
-  border-radius: 12px;
-  padding: 0.75rem;
-  font: inherit;
-}
-
 .site-footer {
   border-top: 1px solid rgba(220, 226, 239, 0.8);
   padding: 1rem 0 2rem;
