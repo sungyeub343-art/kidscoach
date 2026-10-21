@@ -550,6 +550,16 @@ a {
 .faq-list summary { cursor: pointer; color: #20304f; font-weight: 700; }
 .faq-list p { margin: 0.7rem 0 0; color: var(--muted); }
 
+.contact-actions {
+  display: grid;
+  gap: 0.8rem;
+  align-self: center;
+}
+
+.site-footer a {
+  color: inherit;
+}
+
 .site-footer {
   border-top: 1px solid rgba(220, 226, 239, 0.8);
   padding: 1rem 0 2rem;
