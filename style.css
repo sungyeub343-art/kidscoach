@@ -641,3 +641,6 @@ a {
     width: min(1120px, calc(100% - 1.4rem));
   }
 }
+
+.area-chip { padding: 0.45rem 0.65rem; border-radius: 9px; background: rgba(255, 255, 255, 0.86); border: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; }
+.district-neighborhoods + .district-neighborhoods { margin-top: 2.4rem; }
