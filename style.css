@@ -644,3 +644,17 @@ a {
 
 .area-chip { padding: 0.45rem 0.65rem; border-radius: 9px; background: rgba(255, 255, 255, 0.86); border: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; }
 .district-neighborhoods + .district-neighborhoods { margin-top: 2.4rem; }
+
+.guide-article { max-width: 780px; padding-top: 3.2rem; }
+.guide-article h1 { margin: 0.6rem 0 0.4rem; font-size: clamp(1.9rem, 4.6vw, 2.8rem); line-height: 1.2; }
+.guide-meta { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.guide-lead { margin: 1.4rem 0; font-size: 1.08rem; line-height: 1.8; }
+.guide-article h2 { margin: 2.4rem 0 0.8rem; font-size: 1.45rem; line-height: 1.35; }
+.guide-article section > p { margin: 0 0 1rem; line-height: 1.85; color: #2d3650; }
+.guide-toc { padding: 1.1rem 1.3rem; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,0.9); }
+.guide-toc ol { margin: 0.5rem 0 0; padding-left: 1.2rem; display: grid; gap: 0.3rem; }
+.guide-toc a { color: var(--brand-dark); }
+.guide-checklist ul { margin: 0; padding: 1.1rem 1.3rem; list-style: none; display: grid; gap: 0.6rem; border-radius: 16px; background: #effbf9; border: 1px solid #b8e4df; }
+.guide-checklist li::before { content: "☐"; margin-right: 0.55rem; color: var(--brand-dark); }
+.guide-program-link { margin-top: 1rem; }
+.guide-program-link a { color: var(--brand-dark); font-weight: 700; }
