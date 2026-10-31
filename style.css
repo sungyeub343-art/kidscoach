@@ -658,3 +658,4 @@ a {
 .guide-checklist li::before { content: "☐"; margin-right: 0.55rem; color: var(--brand-dark); }
 .guide-program-link { margin-top: 1rem; }
 .guide-program-link a { color: var(--brand-dark); font-weight: 700; }
+.location-callout > .btn { flex-shrink: 0; white-space: nowrap; }
